@@ -155,3 +155,29 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+        // ======NEW FORM WORK=====//
+
+// Get form elements
+const form = document.getElementById('contactForm');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const numberInput = document.getElementById('number');
+// const sendMessageButton = document.getElementById('sendMessageButton');
+
+// Function to log form data when Send Message button is clicked
+function logFormData(event) {
+    event.preventDefault(); // Prevent form submission
+    const formData = {
+        name: nameInput.value,
+        email: emailInput.value,
+        password: passwordInput.value,
+        number: numberInput.value
+    };
+    console.log(formData); // Log form data to console
+    // You can perform further actions here, like sending the data to a server
+}
+
+// Add event listener to the Send Message button
+sendMessageButton.addEventListener('click', logFormData);
